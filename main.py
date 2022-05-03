@@ -6,13 +6,16 @@ from st.student import Student
 def get_modified_students(students):
     modified_students = []
     for student in students:
-        flag = 0
-        for grade in student.grades:
-            if (grade == 3):
-                flag += 1
-        if (flag == 1):
+        flag = True
+        if student.grades.count(4) == 1:
+            for grade in student.grades:
+                if grade < 4:
+                    flag = False
+                    break
+        else:
+            flag = False
+        if flag:
             modified_students.append(student)
-
     return modified_students
 
 
