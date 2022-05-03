@@ -1,22 +1,19 @@
 from st.student import Student
 
 
-# 3
+# 1
 
 def get_modified_students(students):
-    modified_students = []
+    result = []
     for student in students:
         flag = True
-        if student.grades.count(4) == 1:
-            for grade in student.grades:
-                if grade < 4:
-                    flag = False
-                    break
-        else:
-            flag = False
-        if flag:
-            modified_students.append(student)
-    return modified_students
+        for grade in student.grades:
+            if (grade != 5):
+                flag = False
+        if (flag):
+            result.append(student)
+
+    return result
 
 
 students = Student.get_students('students.txt')
