@@ -1,17 +1,16 @@
 from st.student import Student
 
 
-# 5
-
+# 4.
 def get_modified_students(students):
     modified_students = []
 
     for student in students:
-        flag = True
+        flag = False
 
         for i in student.grades:
-            if i < 5:
-                flag = False
+            if i == 2:
+                flag = True
                 break
 
         if flag:
